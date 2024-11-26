@@ -1,12 +1,12 @@
 package Top100Liked;
 
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 
 public class T100_1st {
+//    https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/1463265640/?envType=study-plan-v2&envId=top-100-liked
     public static void main(String[] args) {
-        List<String> result = letterCombinations("23");
+        List<String> result = letterCombinations("3794");
         System.out.println(result);
     }
     public static List<String> letterCombinations(String digits) {
@@ -31,7 +31,7 @@ public class T100_1st {
                 {"w","x","y","z"}
         };
         if (idx == digits.length()){
-            combs.add(comb);
+                combs.add(comb);
         }else {
             String[] posLetters = letters[digits.charAt(idx) - 48];
             for (int i = 0; i < posLetters.length ; i++){
