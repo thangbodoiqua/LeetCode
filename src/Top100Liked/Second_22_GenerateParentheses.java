@@ -3,7 +3,7 @@ package Top100Liked;
 import java.util.ArrayList;
 import java.util.List;
 
-public class T100_2nd_22GenerateParentheses {
+public class Second_22_GenerateParentheses {
     public static void main(String[] args) {
         System.out.println(generateParenthesis(3));
     }

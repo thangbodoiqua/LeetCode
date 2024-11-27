@@ -3,7 +3,7 @@ package Top100Liked;
 import java.util.ArrayList;
 import java.util.List;
 
-public class T100_1st {
+public class First_17_CombinationOfLetters {
 //    https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/1463265640/?envType=study-plan-v2&envId=top-100-liked
     public static void main(String[] args) {
         List<String> result = letterCombinations("3794");

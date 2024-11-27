@@ -1,6 +1,6 @@
 package Top100Liked;
 import java.util.*;
-public class Three_39_CombinationSum {
+public class Third_39_CombinationSum {
     public static void main(String[] args) {
         int[] candidates = {8,7,4,3};
         System.out.println(combinationSum(candidates, 11));
