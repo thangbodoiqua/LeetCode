@@ -9,20 +9,16 @@ public class N912_SortAnArray_InsertionSort {
     }
 
     public static int[] sort(int[] arr){
-        for (int i = arr.length - 1; i >= 0; i--){
-            int largest = arr[i];
-            int index = i;
-            for (int j = i - 1; j>= 0; j--){
-                if (arr[j] > arr[index]){
-                    largest = arr[j];
-                    index = j;
+        for (int i = 1; i < arr.length; i++){
+            for (int j = i - 1; j >= 0; j--){
+                if (arr[j+1] >= arr[j]){
+                    break;
                 }
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
             }
-            int temp = arr[i];
-            arr[i] = largest;
-            arr[index] = temp;
         }
-
         return arr;
     }
 }
