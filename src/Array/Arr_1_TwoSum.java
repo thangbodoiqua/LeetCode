@@ -7,7 +7,7 @@ public class Arr_1_TwoSum {
         int[] arr = {2,7,11,15};
         for (int i : twoSum2(arr, 9)){
             System.out.print(i + " ");
-        };
+        }
     }
     public static int[] twoSum(int[] nums, int target){
         int[] sum = new int[2];
