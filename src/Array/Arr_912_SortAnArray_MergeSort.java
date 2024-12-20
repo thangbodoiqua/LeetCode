@@ -1,4 +1,6 @@
-public class N912_SortAnArray_MergeSort {
+package Array;
+
+public class Arr_912_SortAnArray_MergeSort {
     public static void main(String[] args) {
         int[] arr = new int[]{5,2,4,7,1,3,2,6};
         arr = sort(arr, 0,(arr.length-1)/2, arr.length-1);

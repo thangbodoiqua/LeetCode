@@ -1,4 +1,6 @@
-public class N912_SortAnArray_InsertionSort {
+package Array;
+
+public class Arr_912_SortAnArray_InsertionSort {
 
     public static void main(String[] args) {
         int[] arr = new int[]{5,1,1,2,0,0};
