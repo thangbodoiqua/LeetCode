@@ -34,7 +34,7 @@ public class Arr_15_3Sum {
                 } else
                     j++;
 
-                 while (nums[j] == nums[j-1] && j < k) {
+                while (nums[j] == nums[j-1] && j < k) {
                     j++;
                 }
             }
