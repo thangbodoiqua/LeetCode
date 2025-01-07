@@ -12,11 +12,9 @@ public class Test {
         MyLinkedList ll = new MyLinkedList();
         ll.printLinkedList(n1);
         Node n0 = ll.addToHead(n1, 0);
-        n0 = ll.add(n0,  5);
-        n0 = ll.add(n0, 7);
-        Node n6 = ll.addTo(n0, 6, 6);
         n0 = ll.removeLast(n0);
-        n0 = ll.removeAt(n0, 1);
+        n4 = ll.removeAt(n4, 0);
+        n0 = ll.removeAt(n0, 3);
         ll.printLinkedList(n0);
     }
 }

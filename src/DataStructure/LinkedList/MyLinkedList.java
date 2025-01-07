@@ -74,16 +74,27 @@ public class MyLinkedList {
         int count = 0;
         Node prevNode = null;
         Node curNode = headNode;
-        while (curNode.next != null){
+        boolean bIsFound = false;
+        while (curNode != null){
             if (count == index){
-                prevNode.next = curNode.next;
+                bIsFound = true;
                 break;
             }
             prevNode = curNode;
             curNode = curNode.next;
             count++;
+        }
+
+        if (bIsFound) {
+            if (prevNode == null){
+                return null;
+            }else {
+                if (curNode != null){
+                    prevNode.next = curNode.next;
+                }
             }
-            return headNode;
+        }
+        return headNode;
 
     }
     public void printLinkedList(Node head){
