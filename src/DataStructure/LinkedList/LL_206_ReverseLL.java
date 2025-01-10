@@ -18,11 +18,12 @@ public class LL_206_ReverseLL {
         ll.printLinkedList(n0);
         ll.printLinkedList(reserveList(n0));
     }
-    public static Node reserveList(Node head){
-        if(head == null)
+
+    public static Node reserveList(Node head) {
+        if (head == null)
             return head;
         Node reverse = new Node(head.value);
-        while(head.next != null){
+        while (head.next != null) {
             head = head.next;
             Node temp = new Node(head.value);
             temp.next = reverse;
