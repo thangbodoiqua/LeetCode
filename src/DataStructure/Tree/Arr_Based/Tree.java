@@ -9,42 +9,44 @@ public class Tree {
     int[] p;
     public Tree(int length){
         this.maxSize = length;
-        this.n = 0;
+        this.n = -1;
         l = new String[maxSize];
         p = new int[maxSize];
     }
+    public boolean isFull(){
+        return n == maxSize - 1;
+    }
     void addNode(String label, int parent){
-        if (n == maxSize - 1){
-            System.out.println("maxed!");
-            return;
+        if (isFull()){
+            throw new IllegalStateException("Tree is full");
         }
+        int pos = ++n;
         if (parent == -1){
-            this.p[0] = parent;
-            this.l[0] = label;
+            this.p[pos] = parent;
+            this.l[pos] = label;
         } else {
-            n++;
-            for (int i = 1; i <= n; i++) {
-                if (p[i] > parent || i == n){
-                    for (int j = n; j > i; j--){
-                        l[j] = l[j-1];
-                        p[j] = p[j-1];
-                    }
-                    p[i] = parent;
-                    l[i] = label;
+            for (int i = pos; i > parent; i--) {
+                if (p[i - 1] > parent) {
+                    l[i] = l[i - 1];
+                    p[i] = p[i - 1];
+                    pos = i - 1;
+                }else {
                     break;
                 }
             }
+            this.p[pos] = parent;
+            this.l[pos] = label;
         }
     }
     public int getParent(int node){
-        if (node > n){
-            throw new IllegalStateException("No element");
+        if (node >= n){
+            throw new IndexOutOfBoundsException("Node is not in the tree");
         }
         return p[node];
     }
     public int leftMostChild(int node){
-        if (node > n){
-            throw new IllegalStateException("No element");
+        if (node >= n){
+            throw new IndexOutOfBoundsException("Node is not in the tree");
         }
         for (int i = node; i <= n; i++) {
             if (p[i] == node){
@@ -54,13 +56,16 @@ public class Tree {
         return -1;
     }
     public int rightSibling(int node){
-        if (node > n - 1){
-            throw new IllegalStateException("No element");
-        }
-        if (p[node + 1] == p[node]){
-            return node + 1;
-        }else
+        if (node >= n){
+            throw new IndexOutOfBoundsException("Node is not in the tree");
+        }else if (node == n - 1) {
             return -1;
+        }else{
+            if (p[node + 1] == p[node]) {
+                return node + 1;
+            }
+        }
+        return -1;
     }
     public String getNodeLabel(int node){
         if (node > n){
