@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Arr_26_RemoveDuplicates {
     public static void main(String[] args) {
-        int[] nums = {};
-        int[] arr = {1,1,2};
+        int[] nums = {1,1,1,1,1,2};
+        int[] arr = {1,1,1,1,1,2};
         // 1 2 2
 
 
