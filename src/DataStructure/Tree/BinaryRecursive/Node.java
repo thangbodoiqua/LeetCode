@@ -1,4 +1,4 @@
-package DataStructure.Tree.Recurisve;
+package DataStructure.Tree.BinaryRecursive;
 
 public class Node {
     String value;
