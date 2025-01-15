@@ -24,6 +24,7 @@ function greaterThan10(n) {
     return n > 10;
 }
 
+
 let arr = [0, 10, 20, 30, 40];
 const filter = filteredArr(arr, greaterThan10)
 console.log(filter)
