@@ -10,7 +10,7 @@ factorial accepts a single integer n and returns 1 if n <= 1 or factorial(n - 1)
 var memorized = function (fn) {
     let callCount = 0;
     let cache = new Map();
-    return function (...args) {
+    const memoize = function (...args) {
         let key = JSON.stringify(args);
         if (!cache.has(key)) { 
             ++callCount;
@@ -18,6 +18,8 @@ var memorized = function (fn) {
         }
         return cache.get(key);
     }
+    memoize.getCallCount = () => callCount;
+    return memoize;
 }
 var sum = (a, b) => a + b;
 var fib = (n) => {
@@ -38,5 +40,5 @@ var factorial = (n) => {
 var sumTest = memorized(sum);
 console.log(sumTest(2, 2));
 console.log(sumTest(2, 2));
-console.log(sumTest());
 console.log(sumTest(2, 4));
+console.log(sumTest.getCallCount());
